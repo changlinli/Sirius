@@ -1,0 +1,6 @@
+POST /api_v1/bounty HTML/1.1
+Host: api.crowdbounty.local
+Content-Type: application/json
+Content-Length: 50
+
+json={"id":43,"name":"test","bounty_total":112.25}
