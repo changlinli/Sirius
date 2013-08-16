@@ -1,17 +1,25 @@
 <?php
 /**
- * @file custom_config.php
- * This is the custom configuration file for use with the Sirius platform. Any 
- * app-specific to platform settings should go here. Otherwise platform updates 
- * may overwrite previous configuration changes.
+ * @file
+ * Configuration file for the Sirius platform. Note that all of these settings can 
+ * be overriden in a custom configuration file of choice. Simply place a file 
+ * named custom_config.php two directories up from this directory and redefine any 
+ * variable found here. A custom configuration file in fact should be the way 
+ * that you modify your configuration to make sure that your configurations are 
+ * not overriden every time the Sirius platform is updated.
  */
 
+date_default_timezone_set("America/New_York");
+
 /**
- * ____  _____ _       ____  _       _    __                      
- *|  _ \|___ /| |     |  _ \| | __ _| |_ / _| ___  _ __ _ __ ___  
- *| |_) | |_ \| |     | |_) | |/ _` | __| |_ / _ \| '__| '_ ` _ \ 
- *|  _ < ___) | |___  |  __/| | (_| | |_|  _| (_) | |  | | | | | |
- *|_| \_\____/|_____| |_|   |_|\__,_|\__|_|  \___/|_|  |_| |_| |_|
+ * _   _  ___ _____ ___ ____ _____ _ 
+ *| \ | |/ _ \_   _|_ _/ ___| ____| |
+ *|  \| | | | || |  | | |   |  _| | |
+ *| |\  | |_| || |  | | |___| |___|_|
+ *|_| \_|\___/ |_| |___\____|_____(_)
+ *
+ * DO NOT CHANGE ANY OF THIS WITHOUT FIRST READING THE FILE DESCRIPTION! 
+ * Most app-specific edits should go in a custom_config.php file.
  */
 
 /*******************************************************************************
@@ -44,11 +52,11 @@ $DB_NAME = '';
 /**
  * Database username.
  */
-$DB_USER = '';
+$DB_USER = 'root';
 /**
  * Database password associated with username.
  */
-$DB_PASS = '';
+$DB_PASS = 'decipher10';
 
 /*******************************************************************************
  * What follows are the various roles (i.e. privileges) that can be assigned to 
@@ -89,7 +97,8 @@ $ROLES_ARRAY = array(
 /**
  * DP_ROOT is the location of all Sirius platform files
  */
-//$DP_ROOT = $DP_ROOT;
+$DP_ROOT = dirname(__FILE__) . '/';
+$GLOBAL_ROOT = $DP_ROOT . '../../';
 /**
  * APP_ROOT is the base directory containing all application-related files.
  */
@@ -110,6 +119,7 @@ $APP_VIEWS = $APP_ROOT . 'views/';
 /**
  * ASSETS_FOLDER
  */
+$ASSETS_FOLDER = $GLOBAL_ROOT;
 
 /**
  * ASSETS_URL is the URL directory whereby all static assets (such as CSS files, 
@@ -133,7 +143,7 @@ $project_name = 'default_name';
 $site_email = 'admin@siriusplatform.com';
 
 $DEFAULT_CONTROLLER = 'index';
-$DEFAULT_ACTION = 'index';
+$DEFAULT_ACTION = 'login';
 
 $TABLE_CONFIG = array(
     'dp_libs' => $DP_ROOT . 'libs/', 
@@ -145,6 +155,8 @@ $TABLE_CONFIG = array(
     'default_controller' => $DEFAULT_CONTROLLER,
     'default_action' => $DEFAULT_ACTION,
     'class_suffix' => '.class.php', 
+    'app_layout_dirname' => 'layouts', 
+    'app_layout' => 'layout.php', 
     'action_suffix' => '_action', 
     'private_action_suffix' => '_privaction', 
     'authtoken_ttl' => '60', 
@@ -160,6 +172,52 @@ $TABLE_CONFIG = array(
     'dp_controllers' => $DP_ROOT . 'controllers/', 
     'error_log_path' => '/etc/httpd/logs/', 
     'app_uploads' => 'uploads', 
-    'app_layout_dirname' => $APP_ROOT . 'views/web/layouts', 
-    'app_layout' => 'layout.php', 
+    'bounty_percent' => '0.2', 
+    'app_layout_dirname' => $APP_ROOT . 'views/web/layouts',
+    'app_layout' => $APP_ROOT . 'layout.php'
 );
+
+// Look for a custom configuration file and replace our global variables as need 
+// be if found
+if(isset($GLOBALS['UNIT_TEST_CONFIG'])) {
+    require_once $GLOBALS['UNIT_TEST_CONFIG'];
+} else if(file_exists(dirname(__FILE__).'/../../custom_config.php')) {
+	require(dirname(__FILE__).'/../../custom_config.php');
+}
+
+/*******************************************************************************
+ * Actually defining the variables we have stipulated as global constants occurs 
+ * below
+ ******************************************************************************/
+
+/** debugging mode **/
+define('DEBUG', $DEBUG);
+
+/** platform database credentials **/
+define('DB_HOST', $DB_HOST);
+define('DB_NAME', $DB_NAME);
+define('DB_USER', $DB_USER);
+define('DB_PASS', $DB_PASS);
+define('SALT','$*()^_$%$@$#!');
+
+/** directory configurations **/
+define('DP_ROOT', $DP_ROOT);
+define('APP_ROOT', $APP_ROOT);
+define('VIR_ROOT', $VIR_ROOT);
+
+/** define roles **/
+define('DEVELOPER_ROLE', $DEVELOPER_ROLE);
+define('ADMIN_ROLE', $ADMIN_ROLE);
+define('USER_ROLE', $USER_ROLE);
+define('NO_INTERNET_DEV', $NO_INTERNET_DEV);
+define('ASSETS_URL', $ASSETS_URL);
+define('ASSETS_FOLDER', $ASSETS_FOLDER);
+define('TEMPLATE_ENGINE', $TEMPLATE_ENGINE);
+define('TWIG_TEMPLATE_LOCATION', $TWIG_TEMPLATE_LOCATION);
+define('TWIG_TEMPLATE_SUFFIX', $TWIG_TEMPLATE_SUFFIX);
+define('DEFAULT_CONTROLLER', $DEFAULT_CONTROLLER);
+define('DEFAULT_ACTION', $DEFAULT_ACTION);
+define('APP_CONTROLLERS', $APP_CONTROLLERS);
+define('APP_MODELS', $APP_MODELS);
+define('APP_VIEWS', $APP_VIEWS);
+$GLOBALS['TABLE_CONFIG'] = $TABLE_CONFIG;

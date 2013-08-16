@@ -4,7 +4,7 @@
  * phase of installing the R3L platform to occur. This can be thought of as the 
  * "toolbox" from which setup.php draws upon to do everything.
  */
-namespace r3l_platform\base\setupLib;
+namespace sirius\base\setupLib;
 /**
  * recursive_copy: A recursive copy function implemented in PHP. Note that the 
  * behavior of this function will clearly be very dependent on the directory 

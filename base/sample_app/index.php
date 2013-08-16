@@ -1,3 +1,3 @@
 <?php
-    require_once('r3l-platform/base/boot.php');
+    require_once('sirius/base/boot.php');
 ?>

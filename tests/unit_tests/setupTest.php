@@ -5,7 +5,7 @@
  */
 namespace tests\unit_tests\setupTest;
 use tests\unit_tests\setup\config;
-use r3l_platform\base\setupLib;
+use sirius\base\setupLib;
 
 class setupTest extends \PHPUnit_Framework_TestCase {
     public static function setUpBeforeClass() {

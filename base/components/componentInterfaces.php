@@ -32,7 +32,7 @@
  * using these methods in `interface2` it is impossible to use `interface1`'s 
  * methods successfully.
  */
-namespace r3l_platform\base\components\componentInterfaces;
+namespace sirius\base\components\componentInterfaces;
 
 /**
  * basic_crud_interface: The interface for CRUD operations that all components 

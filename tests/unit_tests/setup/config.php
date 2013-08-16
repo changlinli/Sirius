@@ -41,7 +41,7 @@ function load_config() {
         "validators_controllers" => APP_ROOT . "controllers/validators/",
         "message_noauth" => "You're not logged into the system!",
         "message_nopermissions" => "You don't have permissions to view this page!",
-        "site_email" => "admin@r3lplatform.com",
+        "site_email" => "admin@siriusplatform.com",
         "project_name" => "Crowdbounty",
         "no_mobile_view" => "0",
         "dp_core" => DP_ROOT . "core/",

@@ -3,7 +3,7 @@ namespace tests\unit_tests\basemodelTest;
 use tests\unit_tests\setup\registry;
 use tests\unit_tests\setup\classloader;
 use tests\unit_tests\setup\config;
-use r3l_platform\tests\unit_tests\setupLib;
+use sirius\tests\unit_tests\setupLib;
 require_once('setupLib.php');
 
 class basemodel_test extends \PHPUnit_Framework_TestCase {

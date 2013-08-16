@@ -1,10 +1,10 @@
 <?php
 /**
- * @file setupLib.php Library of functions used to set up tests for the R3L 
+ * @file setupLib.php Library of functions used to set up tests for the Sirius 
  * platform. Eventually if enough functions appear these should get wrapped into 
  * a subclass of the PHPUnit test case class and we should use that subclass.
  */
-namespace r3l_platform\tests\unit_tests\setupLib;
+namespace sirius\tests\unit_tests\setupLib;
 use tests\unit_tests\setup\registry;
 use tests\unit_tests\setup\classloader;
 use tests\unit_tests\setup\config;

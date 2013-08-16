@@ -7,7 +7,7 @@
  * databases.
  */
 
-namespace r3l_platform\doctrine_bootstrap;
+namespace sirius\doctrine_bootstrap;
 
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;

@@ -7,8 +7,8 @@
  * lifecycle. This file will copy the contents of base/sample_app two 
  * directories up and will also set up the MySQL table as needed.
  */
-namespace r3l_platform\base\setup;
-use r3l_platform\base\setupLib;
+namespace sirius\base\setup;
+use sirius\base\setupLib;
 require_once("setupLib.php");
 
 define('SAMPLE_DIR', 'sample_app');

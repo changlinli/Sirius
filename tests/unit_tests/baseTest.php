@@ -5,7 +5,7 @@
  * set up correctly. This includes testing the mock objects created, i.e. given 
  * a very particular set of inputs, the "true" objects should have the same 
  * behavior as their mock equivalents. This allows for making sure that our 
- * testing suite stays current with the rest of the R3L platform.
+ * testing suite stays current with the rest of the Sirius platform.
  *
  * This file also contains code to test that the test database can be connected 
  * to and in fact has the same schema as the normal database used.

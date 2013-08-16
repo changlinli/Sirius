@@ -1,6 +1,5 @@
 *.swp
 *~
-base/config.php
 tags
 *.pdf
 *.log
