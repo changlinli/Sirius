@@ -50,7 +50,7 @@ class Apploader {
             if($validated[1]['result'] == 'false') {
                 return array($validated[0],array_merge(array(),array('validator'=>$validated[1])));
             } else {
-                $controller->init();
+                //$controller->init();
                 $validated 	= (!empty($validated)) ? $validated[1] : array('result'=>'true');
                 $result 	= $this->execute_action($controller);
                 return array($result[0],array_merge($result[1],array('validator'=>$validated)));

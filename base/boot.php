@@ -34,13 +34,13 @@ try {
     $classloader = new classloader($registry);
 
     /** instantiate router **/
-    $registry->router = new router($registry->route_path);
+    $registry->router = new sirius\routing\Router($registry->route_path);
 
     /** instantiate app loader **/
-    $registry->apploader = new apploader($registry);
+    $apploader = new sirius\routing\Apploader($registry);
 
     /** execute **/
-    $response_result = $registry->apploader->execute();
+    $response_result = $apploader->execute();
 
     /** instantiate output encoder **/
     if(!empty($response_result['metadata']['custom_layout_file'])) {
@@ -51,16 +51,13 @@ try {
     } else {
         $output = new output($registry, $response_result);
     }
-    $registry->output = $output;
 
     /** load css and js files into output **/
-    $registry->output->css_files 	= $response_result['metadata']['css_files'];
-    $registry->output->js_files 	= $response_result['metadata']['js_files'];
+    $output->css_files 	= $response_result['metadata']['css_files'];
+    $output->js_files 	= $response_result['metadata']['js_files'];
 
     /** echo output encoder **/
-    $registry->output->out(TEMPLATE_ENGINE);
+    $output->out(TEMPLATE_ENGINE);
 } catch(Exception $e) {
     die(json_encode(array('result'=>'error', 'message'=>$e->getMessage()."\n")));
 }
-
-?>
