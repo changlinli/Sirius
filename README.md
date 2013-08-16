@@ -1,4 +1,4 @@
-R3l Platform
+Sirius Platform
 ============
 
 Yet another PHP web framework! 
