@@ -1,8 +1,8 @@
 <?php
+namespace sirius\output;
 
-class output {
+class Output {
 
-    public $registry;
     private $data;
     public $css_files;
     public $js_files;

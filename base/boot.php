@@ -47,14 +47,17 @@ try {
         $customLayoutFile = $response_result['metadata']['custom_layout_file'];
         $customViewPath = null;
         $customConfig = null;
-        $output = new output($registry, $response_result, $customConfig, $customViewPath, $customLayoutFile);
+        $output = new output($response_result, $customConfig, $customViewPath, $customLayoutFile);
     } else {
-        $output = new output($registry, $response_result);
+        $customConfig = null;
+        $viewPath = $registry->router->view_path;
+        $layoutFile = $TABLE_CONFIG['app_layout_dirname'] . "/" . $TABLE_CONFIG['app_layout'];
+        $output = new output($response_result, $customConfig, $viewPath, $layoutFile);
     }
 
     /** load css and js files into output **/
-    $output->css_files 	= $response_result['metadata']['css_files'];
-    $output->js_files 	= $response_result['metadata']['js_files'];
+    $output->css_files = empty($response_result['metadata']['css_files']) ? null : $response_result['metadata']['css_files'];
+    $output->js_files = empty($response_result['metadata']['js_files']) ? null : $response_result['metadata']['js_files'];
 
     /** echo output encoder **/
     $output->out(TEMPLATE_ENGINE);

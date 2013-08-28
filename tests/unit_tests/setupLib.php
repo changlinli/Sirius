@@ -6,14 +6,10 @@
  */
 namespace sirius\tests\unit_tests\setupLib;
 use tests\unit_tests\setup\registry;
-use tests\unit_tests\setup\classloader;
 use tests\unit_tests\setup\config;
 
 function setupEachTest($class) {
 	$class->registry = new registry\registry('', true);
-	$classloader = new classloader\classloader($class->registry);
-	$class->registry->router = new \router($class->registry->route_path);
-	$class->registry->apploader = new \apploader($class->registry);
 	$class->registry->primarydb = config\setup_db();
 }
 

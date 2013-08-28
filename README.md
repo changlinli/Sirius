@@ -202,13 +202,3 @@ unit tests before pushing). In order to install the git hook, simply execute
 
 The pre-push git hook runs all unit tests in ```tests/unit_tests``` using
 PHPUnit and will reject the push if any tests fail.
-
-What This is Built On
----------------------
-
-The following are not requirements that need to be installed separately; they
-come bundled with the program files or are automatically included via 3rd-party
-CDNs.  Nonetheless they form part of the foundation of the Sirius platform.
-
-+ Twitter Bootstrap
-+ jQuery

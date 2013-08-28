@@ -8,7 +8,7 @@ class Router {
 	var $controller_path;
 	var $action_name;
 	var $output_format;
-	var $view_path;
+	public $view_path;
 	var $route_parameters;
 
 	function __construct($route_path) {

@@ -6,7 +6,7 @@ use tests\unit_tests\setup\config;
 use sirius\tests\unit_tests\setupLib;
 require_once('setupLib.php');
 
-class api_test extends \PHPUnit_Framework_TestCase {
+class MiscTest extends \PHPUnit_Framework_TestCase {
 	public $registry;
 
 	public static function setUpBeforeClass() {

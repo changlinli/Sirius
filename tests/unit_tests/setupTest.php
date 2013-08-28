@@ -15,7 +15,7 @@ class setupTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testCanCreateTableCorrectly() {
-        setupLib\generate_db(SETUP_TEST_DB_NAME, 'localhost', 'changlin', 'blah1234', config\DP_ROOT . 'sample_app/sql_schema.sql');
+        setupLib\generate_db(SETUP_TEST_DB_NAME, 'localhost', 'changlin', 'blah1234');
         $mysqli = new \mysqli('localhost', 'changlin', 'blah1234', SETUP_TEST_DB_NAME);
         $this->assertEquals(0, $mysqli->connect_errno);
         $mysqli->query("DROP DATABASE `" . SETUP_TEST_DB_NAME . '`');

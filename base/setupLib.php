@@ -74,12 +74,14 @@ function recursive_copy($source, $dest, $exclude=array()) {
  *
  * @return true if the query executed successfully, false otherwise.
  */
-function generate_db($db_name, $host, $user, $password, $sql_schema_file) {
+function generate_db($db_name, $host, $user, $password, $sql_schema_file = null) {
 	try {
 		$mysqli = new \mysqli($host, $user, $password);
         $mysqli->query("CREATE DATABASE $db_name DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci");
-		$sql_file_buffer = file_get_contents($sql_schema_file);
-		$mysqli->multi_query($sql_file_buffer);
+        if($sql_schema_file !== null) {
+            $sql_file_buffer = file_get_contents($sql_schema_file);
+            $mysqli->multi_query($sql_file_buffer);
+        }
 	}
 	catch(\Exception $e) {
 		echo 'Caught exception: '. $e->getMessage(). "\n";

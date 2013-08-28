@@ -37,9 +37,6 @@ class database_test extends \PHPUnit_Framework_TestCase {
 			$this->fail('Unit test database connection failed!');
 		}
 	}
-
-	public function test_database_schema_matches_dev_database() {
-	}
 }
 
 /**
