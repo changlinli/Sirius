@@ -1,0 +1,1 @@
+This is a dummy file to test that the router will NOT route to a real file if it is not contained in a top level assets folder.

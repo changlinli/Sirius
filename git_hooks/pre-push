@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd tests/unit_tests/
+../../vendor/bin/phpunit .
+
+exit

