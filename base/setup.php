@@ -41,7 +41,7 @@ function interactive_make_app_files() {
 		return false;
 	}
     $excludeFromCopy = array(SQL_TABLE_FILE, SQL_UNIT_TEST_TABLE_FILE, 'README.md');
-	setupLib\recursive_copy('base/sample_app', '../', $excludeFromCopy);
+	setupLib\recursive_copy(dirname(__FILE__) . '/sample_app', dirname(__FILE__) . '/../../', $excludeFromCopy);
 	echo "Done!\n";
 	return true;
 }
