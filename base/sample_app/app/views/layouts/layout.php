@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><?php echo $this->registry->config['project_name']; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -39,7 +38,6 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="<?php echo '/'.$this->registry->config['default_controller'] .'/'. $this->registry->config['default_action']; ?>"><?php echo $this->registry->config['project_name']; ?></a>
         <div class="nav-collapse collapse pull-left">
             <ul class="nav">
               <li><a href="/index/sample">Sample</a></li>

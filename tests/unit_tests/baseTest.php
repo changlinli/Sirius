@@ -10,6 +10,7 @@
  * This file also contains code to test that the test database can be connected 
  * to and in fact has the same schema as the normal database used.
  */
+
 namespace tests\unit_tests\test_base;
 use tests\unit_tests\setup\registry as registry;
 use tests\unit_tests\setup\classloader as classloader;

@@ -1,6 +1,6 @@
 #!/bin/sh
 
 cd tests/unit_tests/
-phpunit .
+../../vendor/bin/phpunit .
 
 exit
