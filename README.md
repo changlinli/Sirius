@@ -3,6 +3,10 @@ Sirius Platform
 
 Yet another PHP web framework! 
 
+_NOTE THAT THIS IS NOT IN ANY WAY SHAPE OR FORM READY FOR PRODUCTION AT ALL!_
+Sirius is still not even at an alpha release yet!
+For now, it's just a nice little thing to hack around with.
+
 Platform Basics
 ---------------
 
@@ -202,3 +206,7 @@ unit tests before pushing). In order to install the git hook, simply execute
 
 The pre-push git hook runs all unit tests in ```tests/unit_tests``` using
 PHPUnit and will reject the push if any tests fail.
+
+### PHP cURL
+
+Make sure that PHP cURL is installed. PHPUnit-Selenium requires it.
