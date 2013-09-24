@@ -1,9 +1,11 @@
 Sirius Platform
 ============
 
+_NOTE THAT THIS IS NOT IN ANY WAY SHAPE OR FORM READY FOR PRODUCTION AT ALL!_
+-----------------------------------------------------------------------------
+
 Yet another PHP web framework! 
 
-_NOTE THAT THIS IS NOT IN ANY WAY SHAPE OR FORM READY FOR PRODUCTION AT ALL!_
 Sirius is still not even at an alpha release yet!
 For now, it's just a nice little thing to hack around with.
 
